@@ -1,0 +1,30 @@
+{
+  "name": "scuttlego",
+  "version": "0.0.0",
+  "description": "a cryptographically secure, decentalized Go game",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahdinosaur/scuttlego"
+  },
+  "keywords": [
+    "secure-scuttlebutt",
+    "ssb",
+    "ssbc",
+    "go",
+    "game"
+  ],
+  "author": "ahdinosaur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahdinosaur/scuttlego/issues"
+  },
+  "homepage": "https://github.com/ahdinosaur/scuttlego",
+  "dependencies": {
+    "standard": "^3.6.1",
+    "tape": "^4.0.0"
+  }
+}
