@@ -6,20 +6,18 @@ module.exports = {
       type: 'enum',
       enum: ['scuttlego/Move']
     },
-    game: {
-      properties: {
-        root: {
-          type: 'string',
-          format: 'hash'
-        },
-        prev: {
-          type: 'string',
-          format: 'hash'
-        }
+    players: {
+      type: 'array',
+      items: {
+        $ref: 'Player
       }
     },
-    move: {
+    stones: {
+      type: 'object',
       properties: {
+        player: {
+          type: 'string'
+        },
         x: {
           type: 'number'
         },
