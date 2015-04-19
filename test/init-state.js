@@ -14,11 +14,13 @@ test('init state', function (t) {
   })
   var players = pluck(keys, 'id')
   var initMsg = {
-    type: 'Init',
-    players: players,
-    rules: {
-      rows: rows,
-      cols: cols
+    content: {
+      type: 'Init',
+      players: players,
+      rules: {
+        rows: rows,
+        cols: cols
+      }
     }
   }
 
