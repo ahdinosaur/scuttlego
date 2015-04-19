@@ -9,7 +9,7 @@ module.exports = {
     players: {
       type: 'array',
       items: {
-        $ref: 'Player
+        $ref: 'Player'
       }
     },
     stones: {
