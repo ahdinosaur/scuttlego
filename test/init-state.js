@@ -30,6 +30,7 @@ test('init state', function (t) {
   }
 
   var state = initState(initMsg)
+
   t.deepEqual(state, {
     players: initPlayers,
     stones: new Ndarray([], [rows, cols])
