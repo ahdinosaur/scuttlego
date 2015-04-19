@@ -2,8 +2,8 @@ var test = require('tape')
 var Keys = require('ssb-keys')
 var range = require('lodash.range')
 var pluck = require('lodash.pluck')
-var Ndarray = require('ndarray')
 
+var Board = require('../lib/board')
 var initState = require('../lib/init-state')
 
 test('init state', function (t) {
@@ -13,6 +13,7 @@ test('init state', function (t) {
     return Keys.generate()
   })
   var players = pluck(keys, 'id')
+
   var initMsg = {
     content: {
       type: 'Init',
@@ -28,7 +29,7 @@ test('init state', function (t) {
 
   t.deepEqual(state, {
     players: players,
-    board: new Ndarray([], [rows, cols])
+    board: new Board({ rows: rows, cols: cols })
   })
 
   t.end()

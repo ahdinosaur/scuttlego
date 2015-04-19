@@ -2,8 +2,8 @@ var test = require('tape')
 var Keys = require('ssb-keys')
 var pluck = require('lodash.pluck')
 var range = require('lodash.range')
-var Ndarray = require('ndarray')
 
+var Board = require('../lib/board')
 var stepState = require('../lib/step-state')
 
 test('step state', function (t) {
@@ -16,7 +16,7 @@ test('step state', function (t) {
 
   var initState = {
     players: players,
-    board: new Ndarray([], [rows, cols])
+    board: new Board({ rows: rows, cols: cols })
   }
 
   // first move
@@ -44,7 +44,7 @@ test('step state', function (t) {
   })
 
   function createBoard (stones) {
-    var board = new Ndarray([], [rows, cols])
+    var board = new Board({ rows: rows, cols: cols})
     stones.forEach(function (stone) {
       board.set([stone.x, stone.y], stone.player)
     })
