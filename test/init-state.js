@@ -26,7 +26,7 @@ test('init state', function (t) {
 
   t.deepEqual(state, {
     players: players,
-    stones: new Ndarray([], [rows, cols])
+    board: new Ndarray([], [rows, cols])
   })
 
   t.end()
