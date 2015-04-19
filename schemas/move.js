@@ -4,7 +4,7 @@ module.exports = {
   properties: {
     type: {
       type: 'enum',
-      enum: ['scuttlego/Move']
+      enum: ['Move']
     },
     game: {
       properties: {

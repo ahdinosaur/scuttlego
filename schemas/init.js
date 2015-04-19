@@ -4,7 +4,7 @@ module.exports = {
   properties: {
     type: {
       type: 'enum',
-      enum: ['scuttlego/Init']
+      enum: ['Init']
     },
     rules: {
       type: 'object',
@@ -15,6 +15,12 @@ module.exports = {
         cols: {
           type: 'number'
         }
+      }
+    },
+    players: {
+      type: 'array',
+      items: {
+        $ref: 'Player'
       }
     },
     text: {

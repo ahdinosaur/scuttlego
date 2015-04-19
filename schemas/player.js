@@ -3,7 +3,7 @@ module.exports = {
   type: 'object',
   properties: {
     name: {
-      type: 'string',
+      type: 'string'
     },
     id: {
       type: 'string',
