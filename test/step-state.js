@@ -34,13 +34,22 @@ test('step state', function (t) {
 
   var steppedState = stepState(initState, stepMsg)
 
-  var steppedBoard = new Ndarray([], [rows, cols])
-  steppedBoard.set([10, 10], players[0])
-
   t.deepEqual(steppedState, {
     players: players,
-    board: steppedBoard
+    board: createBoard([{
+      x: 10,
+      y: 10,
+      player: players[0]
+    }])
   })
+
+  function createBoard (stones) {
+    var board = new Ndarray([], [rows, cols])
+    stones.forEach(function (stone) {
+      board.set([stone.x, stone.y], stone.player)
+    })
+    return board
+  }
 
   t.end()
 })
