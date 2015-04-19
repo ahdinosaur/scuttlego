@@ -1,28 +1,21 @@
 var test = require('tape')
 var Keys = require('ssb-keys')
 var range = require('lodash.range')
-var assign = require('lodash.assign')
-var pick = require('lodash.pick')
+var pluck = require('lodash.pluck')
 var Ndarray = require('ndarray')
 
 var initState = require('../lib/init-state')
 
-var playerNames = ['Alice', 'Bob']
-
 test('init state', function (t) {
   var rows = 19
   var cols = 19
-  var players = range(2).map(function (index) {
-    return assign(
-      Keys.generate(),
-      { name: playerNames[index] }
-    )
+  var keys = range(2).map(function (index) {
+    return Keys.generate()
   })
-
-  var initPlayers = pick(players, ['id', 'name'])
+  var players = pluck(keys, 'id')
   var initMsg = {
     type: 'Init',
-    players: initPlayers,
+    players: players,
     rules: {
       rows: rows,
       cols: cols
@@ -32,7 +25,7 @@ test('init state', function (t) {
   var state = initState(initMsg)
 
   t.deepEqual(state, {
-    players: initPlayers,
+    players: players,
     stones: new Ndarray([], [rows, cols])
   })
 

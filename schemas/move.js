@@ -2,10 +2,6 @@ module.exports = {
   id: 'Move',
   type: 'object',
   properties: {
-    type: {
-      type: 'enum',
-      enum: ['Move']
-    },
     game: {
       properties: {
         root: {

@@ -1,4 +1,5 @@
 module.exports = {
   Init: require('./init'),
-  Move: require('./move')
+  Move: require('./move'),
+  Player: require('./player')
 }
