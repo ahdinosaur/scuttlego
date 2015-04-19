@@ -24,7 +24,16 @@
   },
   "homepage": "https://github.com/ahdinosaur/scuttlego",
   "dependencies": {
+    "lodash.values": "^3.0.0",
+    "ssb-keys": "^0.7.0",
     "standard": "^3.6.1",
+    "tape": "^4.0.0",
+    "z-schema": "^3.9.1"
+  },
+  "devDependencies": {
+    "lodash.assign": "^3.1.0",
+    "lodash.pick": "^3.1.0",
+    "lodash.range": "^3.0.0",
     "tape": "^4.0.0"
   }
 }
